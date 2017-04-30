@@ -43,6 +43,9 @@ class TodosContainer extends Component {
         this.setState({todos})
     })
   }
+  updateTodo(todo) {
+    console.log('updating todo from TodosContainer', todo)
+  }
   render(){
     return (
       <div className='todosContainer'>
