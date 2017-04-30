@@ -2,11 +2,14 @@
 import React, {Component} from 'react'
 
 class EditTodoForm extends Component {
+  onInputChange(event) {
+    console.log('changing a todo!')
+  }
   render(){
     return (
       <div className='editTodoForm'>
         <form>
-          <input
+          <input onChange={event => this.onInputChange(event)}
             placeholder='Write updated todo here...'
             type='text'
             value='' />
