@@ -10,7 +10,7 @@ class TodoModel {
     return request
   }
   static delete(todo){
-    let request = axios.delete('https://super-crud.herokuapp.com/todos/${todo._id}')
+    let request = axios.delete(`https://super-crud.herokuapp.com/todos/${todo._id}`)
     return request
   }
 }
