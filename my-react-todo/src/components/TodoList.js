@@ -4,7 +4,7 @@ import Todo from './Todo'
 
 class TodoList extends Component {
   render(){
-    let todos = this.props.todos.map( (todo) => {
+    let todoArray = this.props.todos.map( (todo) => {
       return (
         <Todo
           key={todo._id}
@@ -13,7 +13,7 @@ class TodoList extends Component {
     })
     return(
       <div className="todos">
-        {todos}
+        {todoArray}
       </div>
     )
   }
