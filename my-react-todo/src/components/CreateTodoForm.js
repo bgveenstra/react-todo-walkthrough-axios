@@ -2,6 +2,14 @@
 import React, {Component} from 'react'
 
 class CreateTodoForm extends Component {
+  constructor(){
+    // use Component's constructor
+    super()
+    // set initial state
+    this.state = {
+      todo: ''
+    }
+  }
   render(){
     return (
       <div className='createForm todoForm'>
@@ -10,7 +18,7 @@ class CreateTodoForm extends Component {
           <input
             placeholder='Write a todo here ...'
             type='text'
-            value='write a new todo' />
+            value={this.state.todo} />
           <button type='submit'>Create Todo!</button>
         </form>
       </div>
