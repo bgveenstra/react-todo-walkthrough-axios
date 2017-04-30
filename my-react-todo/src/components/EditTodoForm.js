@@ -21,6 +21,10 @@ class EditTodoForm extends Component {
   onFormSubmit(event){
     event.preventDefault()
     console.log('edit todo form submitted')
+    this.props.onUpdateTodo(this.state.updatedTodoBody)
+    this.setState({
+      updatedTodoBody: ''
+    })
   }
 
   render(){
