@@ -17,7 +17,7 @@ class EditTodoForm extends Component {
       updatedTodoBody: event.target.value
     })
   }
-  
+
   render(){
     return (
       <div className='editTodoForm'>
@@ -25,7 +25,7 @@ class EditTodoForm extends Component {
           <input onChange={event => this.onInputChange(event)}
             placeholder='Write updated todo here...'
             type='text'
-            value='' />
+            value={this.state.updatedTodoBody} />
           <button type='submit'>Update Todo!</button>
         </form>
       </div>
