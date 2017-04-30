@@ -2,6 +2,7 @@
 import React, {Component} from 'react'
 import TodoModel from '../models/Todo'
 import TodoList from '../components/TodoList'
+import CreateTodoForm from '../components/CreateTodoForm.js'
 
 class TodosContainer extends Component {
   constructor(){
@@ -23,6 +24,7 @@ class TodosContainer extends Component {
   render(){
     return (
       <div className='todosContainer'>
+        <CreateTodoForm />
         <TodoList
           todos={this.state.todos} />
       </div>
