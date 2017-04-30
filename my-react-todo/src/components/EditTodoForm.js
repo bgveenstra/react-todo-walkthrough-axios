@@ -18,10 +18,15 @@ class EditTodoForm extends Component {
     })
   }
 
+  onFormSubmit(event){
+    event.preventDefault()
+    console.log('edit todo form submitted')
+  }
+
   render(){
     return (
       <div className='editTodoForm'>
-        <form>
+        <form onSubmit={event => this.onFormSubmit(event)}>
           <input onChange={event => this.onInputChange(event)}
             placeholder='Write updated todo here...'
             type='text'
