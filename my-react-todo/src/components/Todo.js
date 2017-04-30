@@ -13,7 +13,8 @@ class Todo extends Component {
               (X)
           </span>
         </p>
-        <EditTodoForm />
+        <EditTodoForm 
+          onUpdateTodo={this.props.onUpdateTodo} />
       </div>
     )
   }

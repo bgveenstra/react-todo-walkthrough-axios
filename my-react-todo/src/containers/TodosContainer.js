@@ -53,6 +53,7 @@ class TodosContainer extends Component {
         createTodo={this.createTodo.bind(this)} />
         <TodoList
           todos={this.state.todos} 
+          onUpdateTodo={this.updateTodo.bind(this)}
           onDeleteTodo={this.deleteTodo.bind(this)} />
       </div>
     )
