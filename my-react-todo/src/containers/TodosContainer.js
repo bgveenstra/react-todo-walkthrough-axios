@@ -21,8 +21,18 @@ class TodosContainer extends Component {
       })
     })
   }
-  createTodo(body) {
-    console.log('creating todo', body)
+  createTodo(newBody) {
+    console.log('creating todo', newBody)
+      let newTodo = {
+      body: newBody,
+      completed: false
+    }
+    TodoModel.create(newTodo).then((res) => {
+      console.log('created todo', res.data)
+      let todos = this.state.todos
+      let newTodos = todos.push(res.data)
+      this.setState({newTodos})
+    })
   }
   render(){
     return (
