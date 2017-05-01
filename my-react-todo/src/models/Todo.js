@@ -9,8 +9,14 @@ class TodoModel {
     let request = axios.post("https://super-crud.herokuapp.com/todos", todo)
     return request
   }
-  static delete(todo){
-    let request = axios.delete(`https://super-crud.herokuapp.com/todos/${todo._id}`)
+  static delete(todo) {
+    let url = `https://super-crud.herokuapp.com/todos/${todo._id}`
+    let request = axios.delete(url)
+    return request
+  }
+  static update(todoBody, id) {
+    let url = `https://super-crud.herokuapp.com/todos/${id}`
+    let request = axios.put(url, {body: todoBody})
     return request
   }
 }
