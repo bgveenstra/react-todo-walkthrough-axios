@@ -43,8 +43,20 @@ class TodosContainer extends Component {
         this.setState({todos})
     })
   }
-  updateTodo(todo) {
-    console.log('updating todo from TodosContainer', todo)
+  updateTodo(updatedBody, id) {
+    console.log('updating todo from TodosContainer', updatedBody, id)
+    // get id of todo to update
+    // get new todo info
+    // use TodoModel to send AJAX request to update
+    TodoModel.update(updatedBody, id)
+      .then((res) => {
+        console.log('updating todo from API response', res.data)
+        let todos = this.state.todos
+        let correctTodo = todos.find((item) => {return item._id === id})
+        correctTodo.body = res.data.body
+        this.setState({ todos: todos })
+      })
+      .catch((err) => { console.log('err', err) })
   }
   render(){
     return (
